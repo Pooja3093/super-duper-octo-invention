@@ -37,7 +37,7 @@ module.exports = () => {
         theme_color: '#225ca3',
         start_url: '/',
         publicPath: '/',
-        // display: 'standalone',
+        display: 'standalone',
         icons: [
           {
             src: path.resolve('./src/images/logo.png'),
@@ -60,7 +60,8 @@ module.exports = () => {
           use: {
             loader: 'babel-loader',
             options: {
-              presets: ['@babel/preset-env']
+              presets: ['@babel/preset-env'],
+              plugins: ['@babel/plugin-proposal-object-rest-spread', '@babel/transform-runtime'],
             }
           }
         },
